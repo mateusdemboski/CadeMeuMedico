@@ -1,0 +1,104 @@
+@model CadeMeuMedico.Models.Medicos
+@addTagHelper "*, Microsoft.AspNet.Mvc.TagHelpers"
+@{
+    ViewBag.Title = "Edit";
+}
+@* Página com exemplos utilizando Tag Helpers e Razor *@
+
+<h2>Edit</h2>
+
+<form asp-action="Editar" method="post">
+    <div asp-validation-summary="ValidationSummary.All"></div>
+    @*@Html.ValidationSummary(true)*@
+    <fieldset>
+        <legend>Medico</legend>
+
+        <input type="hidden" asp-for="IDMedico" />
+        @*@Html.HiddenFor(model => model.IDMedico)*@
+
+        <div class="editor-label">
+            <label asp-for="CRM"></label>
+            @*@Html.LabelFor(model => model.CRM)*@
+        </div>
+        <div class="editor-field">
+            <input asp-for="CRM" />
+            @*@Html.EditorFor(model => model.CRM)*@
+            <span asp-validation-for="CRM"></span>
+            @*@Html.ValidationMessageFor(model => model.CRM)*@
+        </div>
+        <div class="editor-label">
+            <label asp-for="Nome"></label>
+        </div>
+        <div class="editor-field">
+            <input asp-for="Nome" />
+            <span asp-validation-for="Nome"></span>
+        </div>
+        <div class="editor-label">
+            <label asp-for="Endereco"></label>
+        </div>
+        <div class="editor-field">
+            <input asp-for="Endereco" />
+            <span asp-validation-for="Endereco"></span>
+        </div>
+        <div class="editor-label">
+            <label asp-for="Bairro"></label>
+        </div>
+        <div class="editor-field">
+            <input asp-for="Bairro" />
+            <span asp-validation-for="Bairro"></span>
+        </div>
+        <div class="editor-label">
+            <label asp-for="Email"></label>
+        </div>
+        <div class="editor-field">
+            <input asp-for="Email" />
+            <span asp-validation-for="Email"></span>
+        </div>
+        <div class="editor-label">
+            <label asp-for="AtendePorConvenio"></label>
+        </div>
+        <div class="editor-field">
+            <input asp-for="AtendePorConvenio" />
+            <span asp-validation-for="AtendePorConvenio"></span>
+        </div>
+        <div class="editor-label">
+            <label asp-for="TemClinica"></label>
+        </div>
+        <div class="editor-field">
+            <input asp-for="TemClinica" />
+            <span asp-validation-for="TemClinica"></span>
+        </div>
+        <div class="editor-label">
+            <label asp-for="WebsiteBlog"></label>
+        </div>
+        <div class="editor-field">
+            <input asp-for="WebsiteBlog" />
+            <span asp-validation-for="WebsiteBlog"></span>
+        </div>
+        <div class="editor-label">
+            <label asp-for="IDCidade"></label>
+        </div>
+        <div class="editor-field">
+            <select asp-for="IDCidade" asp-items="ViewBag.IDCidade"></select>
+            @*@Html.DropDownList("IDCidade", String.Empty)*@
+            <span asp-validation-for="IDCidade"></span>
+        </div>
+        <div class="editor-label">
+            <label asp-for="IDEspecialidade"></label>
+        </div>
+        <div class="editor-field">
+            <select asp-for="IDEspecialidade" asp-items="ViewBag.IDEspecialidade"></select>
+            @*@Html.DropDownList("IDEspecialidade", String.Empty)*@
+            <span asp-validation-for="IDEspecialidade"></span>
+        </div>
+
+        <p>
+            <input type="submit" value="Gravar" />
+        </p>
+    </fieldset>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+    @*@Html.ActionLink("Back to List", "Index")*@
+</div>

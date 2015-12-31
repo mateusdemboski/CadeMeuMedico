@@ -1,0 +1,8 @@
+/.vs
+/artifacts
+/src/CadeMeuMedico/bin
+/src/CadeMeuMedico/node_modules
+/src/CadeMeuMedico/Properties/PublishProfiles
+/src/CadeMeuMedico/wwwroot/css/site.min.css
+/src/CadeMeuMedico/wwwroot/js/site.min.js
+/src/CadeMeuMedico/wwwroot/lib
